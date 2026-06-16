@@ -1,85 +1,151 @@
 
 
 <style>
-  .qa-wrap { padding: 1.25rem 1rem 1.5rem; font-family: 'Be Vietnam Pro', var(--font-sans); }
-  .qa-header { text-align: center; background: #150900; border-radius: var(--border-radius-lg); padding: 1.25rem 1rem 1rem; margin-bottom: 1.25rem; }
-  .qa-logo { font-size: 32px; margin-bottom: 6px; }
-  .qa-title { color: #f0c040; font-size: 18px; font-weight: 700; margin-bottom: 2px; }
-  .qa-sub { color: rgba(253,230,138,.5); font-size: 12px; }
-  .qa-section { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #c8960c; margin-bottom: 10px; margin-top: 1.25rem; display: flex; align-items: center; gap: 8px; }
-  .qa-section::after { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, rgba(200,150,12,.3), transparent); }
-  .grid-top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-  .grid-main { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-  .qa-card { display: flex; flex-direction: column; align-items: flex-start; gap: 7px; padding: 14px 13px; background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); text-decoration: none; color: var(--color-text-primary); transition: background .13s, border-color .13s; }
-  .qa-card:hover { border-color: rgba(200,150,12,.5); background: #fffbf0; }
-  .qa-ico { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
-  .qa-card-title { font-size: 13px; font-weight: 700; color: var(--color-text-primary); line-height: 1.3; }
-  .qa-card-desc { font-size: 11px; color: var(--color-text-secondary); }
-  .ic-teal { background: #e1f5ee; }
-  .ic-gold { background: #fef9c3; }
-  .ic-purple { background: #faf5ff; }
-  .ic-amber { background: #fef3c7; }
-  .ic-blue { background: #eff6ff; }
-  .ic-dark { background: #fef3c7; }
-  .ic-red { background: #fff1f2; }
+  @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&display=swap');
+  .ts-app { font-family:'Be Vietnam Pro',var(--font-sans); background:#0e0800; border-radius:20px; overflow:hidden; }
+  .ts-header { background:#150900; border-bottom:1.5px solid #c8960c33; padding:18px 20px 16px; display:flex; align-items:center; gap:12px; }
+  .ts-avatar { width:46px;height:46px;border-radius:50%;border:2px solid #c8960c;background:#2a1500;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0; }
+  .ts-brand-name { color:#f0c040;font-size:15px;font-weight:800;line-height:1.2; }
+  .ts-brand-sub { color:rgba(253,230,138,.4);font-size:11px;margin-top:1px; }
+  .ts-login { margin-left:auto;padding:6px 14px;border-radius:99px;border:1.5px solid #c8960c;color:#f0c040;font-size:12px;font-weight:700;background:transparent;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:5px;font-family:inherit; }
+  .ts-login:hover { background:#c8960c;color:#150900; }
+
+  .ts-hero { background:#150900;padding:28px 20px 24px;text-align:center;border-bottom:1.5px solid #c8960c22;position:relative; }
+  .ts-hero-glow { position:absolute;top:0;left:50%;transform:translateX(-50%);width:300px;height:120px;background:radial-gradient(ellipse, rgba(200,150,12,.18) 0%, transparent 70%);pointer-events:none; }
+  .ts-hero-ring { width:76px;height:76px;border-radius:50%;border:2px solid #c8960c;background:#2a1500;display:flex;align-items:center;justify-content:center;font-size:34px;margin:0 auto 14px;position:relative;z-index:1; }
+  .ts-hero h1 { color:#f0c040;font-size:20px;font-weight:800;position:relative;z-index:1; }
+  .ts-hero p { color:rgba(253,230,138,.5);font-size:12px;margin-top:4px;position:relative;z-index:1; }
+  .ts-pills { display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:12px;position:relative;z-index:1; }
+  .ts-pill { padding:4px 12px;border-radius:99px;border:1px solid rgba(200,150,12,.25);background:rgba(200,150,12,.08);color:#fde68a;font-size:11px;font-weight:500; }
+
+  .ts-body { background:#f7f5ef;padding:20px 16px 24px; }
+
+  .ts-sec-label { display:flex;align-items:center;gap:8px;margin-bottom:12px;margin-top:20px; }
+  .ts-sec-label:first-child { margin-top:0; }
+  .ts-sec-text { font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.8px;color:#c8960c; }
+  .ts-sec-line { flex:1;height:1px;background:linear-gradient(to right,rgba(200,150,12,.3),transparent); }
+
+  .ts-top3 { display:grid;grid-template-columns:repeat(3,1fr);gap:10px; }
+  .ts-card-feature { display:flex;flex-direction:column;gap:8px;padding:14px 12px;background:#fff;border:1px solid rgba(200,150,12,.18);border-radius:14px;text-decoration:none;color:#1a0e00;transition:border-color .15s,background .15s; }
+  .ts-card-feature:hover { border-color:rgba(200,150,12,.5);background:#fffcf0; }
+  .ts-ico-wrap { width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0; }
+  .ts-card-feature .ts-ct { font-size:13px;font-weight:700;color:#1a0e00;line-height:1.3; }
+  .ts-card-feature .ts-cs { font-size:11px;color:#7c6030;margin-top:1px; }
+  .ts-badge-new { display:inline-block;padding:2px 7px;border-radius:99px;background:#fef9c3;color:#854F0B;font-size:10px;font-weight:700;margin-top:4px;width:fit-content; }
+
+  .ts-grid6 { display:grid;grid-template-columns:repeat(3,1fr);gap:9px; }
+  .ts-card-sm { display:flex;align-items:center;gap:10px;padding:12px 12px;background:#fff;border:1px solid rgba(200,150,12,.15);border-radius:12px;text-decoration:none;color:#1a0e00;transition:border-color .15s,background .15s; }
+  .ts-card-sm:hover { border-color:rgba(200,150,12,.45);background:#fffcf0; }
+  .ts-sm-ico { width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0; }
+  .ts-sm-title { font-size:12px;font-weight:700;color:#1a0e00;line-height:1.25; }
+  .ts-sm-sub { font-size:10px;color:#7c6030;margin-top:1px; }
+  .ts-arrow { color:rgba(200,150,12,.4);font-size:14px;margin-left:auto; }
+
+  .ic-amber { background:#fef3c7; }
+  .ic-teal  { background:#e1f5ee; }
+  .ic-blue  { background:#eff6ff; }
+  .ic-purple{ background:#faf5ff; }
+  .ic-dark  { background:#fef3c7; }
+  .ic-red   { background:#fff1f2; }
+  .ic-green { background:#f0fdf4; }
+
+  .ts-footer { background:#150900;border-top:1.5px solid rgba(200,150,12,.2);text-align:center;padding:14px 20px;font-size:11px;color:rgba(253,230,138,.35); }
+  .ts-footer strong { color:#f0c040; }
+
+  .ts-divider { height:1px;background:rgba(200,150,12,.1);margin:20px 0 0; }
 </style>
-<div class="qa-wrap">
-  <div class="qa-header">
-    <div class="qa-logo">🔮</div>
-    <div class="qa-title">T-Share Trải Bài</div>
-    <div class="qa-sub">Truy cập nhanh tất cả dịch vụ</div>
+
+<h2 class="sr-only">T-Share Trải Bài — Trang truy cập nhanh các dịch vụ</h2>
+
+<div class="ts-app">
+  <header class="ts-header">
+    <div class="ts-avatar">🔮</div>
+    <div>
+      <div class="ts-brand-name">T-Share Trải Bài</div>
+      <div class="ts-brand-sub">T-Share Groups · Lâm Đồng</div>
+    </div>
+    <a href="https://congthanhql.github.io/login/" class="ts-login">
+      <i class="ti ti-login" style="font-size:13px" aria-hidden="true"></i> Đăng nhập
+    </a>
+  </header>
+
+  <div class="ts-hero">
+    <div class="ts-hero-glow"></div>
+    <div class="ts-hero-ring">🔮</div>
+    <h1>T-Share Trải Bài</h1>
+    <p>Khám phá tri thức · Kết nối vận mệnh</p>
+    <div class="ts-pills">
+      <span class="ts-pill"><i class="ti ti-map-pin" style="font-size:11px" aria-hidden="true"></i> Lâm Đồng</span>
+      <span class="ts-pill"><i class="ti ti-sparkles" style="font-size:11px" aria-hidden="true"></i> Tarot &amp; Kinh Dịch</span>
+      <span class="ts-pill"><i class="ti ti-cpu" style="font-size:11px" aria-hidden="true"></i> Công nghệ</span>
+    </div>
   </div>
 
-  <div class="qa-section">Ưu tiên</div>
-  <div class="grid-top">
-    <a class="qa-card" href="https://sites.google.com/view/tsharetraibai/groups-t-share/b%E1%BA%A3ng-gi%C3%A1?authuser=1">
-      <div class="qa-ico ic-gold">🧧</div>
-      <div class="qa-card-title">Bảng Giá</div>
-      <div class="qa-card-desc">Xem chi tiết gói dịch vụ</div>
-    </a>
-    <a class="qa-card" href="https://sites.google.com/view/tsharetraibai/groups-t-share/%C4%91%E1%BA%B7t-l%E1%BB%8Bch?authuser=1">
-      <div class="qa-ico ic-teal">📅</div>
-      <div class="qa-card-title">Đặt Lịch</div>
-      <div class="qa-card-desc">Đặt lịch trải bài online</div>
-    </a>
-    <a class="qa-card" href="https://www.congthanh.io.vn">
-      <div class="qa-ico ic-blue">💻</div>
-      <div class="qa-card-title">Website Cá Nhân</div>
-      <div class="qa-card-desc">Portfolio & giới thiệu</div>
-    </a>
+  <div class="ts-body">
+    <div class="ts-sec-label">
+      <i class="ti ti-bolt" style="font-size:13px;color:#c8960c" aria-hidden="true"></i>
+      <span class="ts-sec-text">Ưu tiên hàng đầu</span>
+      <div class="ts-sec-line"></div>
+    </div>
+
+    <div class="ts-top3">
+      <a class="ts-card-feature" href="https://sites.google.com/view/tsharetraibai/groups-t-share/b%E1%BA%A3ng-gi%C3%A1?authuser=1">
+        <div class="ts-ico-wrap ic-amber">🧧</div>
+        <div class="ts-ct">Bảng Giá</div>
+        <div class="ts-cs">Xem chi tiết các gói</div>
+      </a>
+      <a class="ts-card-feature" href="https://sites.google.com/view/tsharetraibai/groups-t-share/%C4%91%E1%BA%B7t-l%E1%BB%8Bch?authuser=1">
+        <div class="ts-ico-wrap ic-teal">📅</div>
+        <div class="ts-ct">Đặt Lịch</div>
+        <div class="ts-cs">Đặt lịch online ngay</div>
+        <span class="ts-badge-new">Hot</span>
+      </a>
+      <a class="ts-card-feature" href="https://www.congthanh.io.vn">
+        <div class="ts-ico-wrap ic-blue">💻</div>
+        <div class="ts-ct">Website Cá Nhân</div>
+        <div class="ts-cs">Portfolio &amp; giới thiệu</div>
+      </a>
+    </div>
+
+    <div class="ts-sec-label">
+      <i class="ti ti-cards" style="font-size:13px;color:#c8960c" aria-hidden="true"></i>
+      <span class="ts-sec-text">Dịch vụ &amp; Tra cứu</span>
+      <div class="ts-sec-line"></div>
+    </div>
+
+    <div class="ts-grid6">
+      <a class="ts-card-sm" href="https://sites.google.com/view/tsharetraibai/t%E1%BB%A9-ph%E1%BB%A7?authuser=1">
+        <div class="ts-sm-ico ic-red">🚩</div>
+        <div><div class="ts-sm-title">Cờ Lệnh</div><div class="ts-sm-sub">Lệnh Thánh</div></div>
+        <span class="ts-arrow">›</span>
+      </a>
+      <a class="ts-card-sm" href="https://sites.google.com/view/tsharetraibai/%C4%91%C3%A1nh-gi%C3%A1-d%E1%BB%8Bch-v%E1%BB%A5?authuser=1">
+        <div class="ts-sm-ico ic-amber">🌟</div>
+        <div><div class="ts-sm-title">Đánh Giá</div><div class="ts-sm-sub">Phản hồi dịch vụ</div></div>
+        <span class="ts-arrow">›</span>
+      </a>
+      <a class="ts-card-sm" href="https://sites.google.com/view/tsharetraibai/groups-t-share/%C3%BD-ngh%C4%A9a-b%C3%A0i?authuser=1">
+        <div class="ts-sm-ico ic-purple">💡</div>
+        <div><div class="ts-sm-title">Ý Nghĩa Bài</div><div class="ts-sm-sub">Tra cứu Tarot</div></div>
+        <span class="ts-arrow">›</span>
+      </a>
+      <a class="ts-card-sm" href="https://sites.google.com/view/tsharetraibai/soi-c%C4%83n-s%E1%BB%91?authuser=1">
+        <div class="ts-sm-ico ic-amber">🪧</div>
+        <div><div class="ts-sm-title">Soi Căn – Số</div><div class="ts-sm-sub">Dành cho reader</div></div>
+        <span class="ts-arrow">›</span>
+      </a>
+      <a class="ts-card-sm" href="https://sites.google.com/view/tsharetraibai/d%E1%BB%B1-%C3%A1n/csdl-h%E1%BB%93-s%C6%A1?authuser=1">
+        <div class="ts-sm-ico ic-dark">🔎</div>
+        <div><div class="ts-sm-title">CSDL Hồ Sơ</div><div class="ts-sm-sub">Quản lý khách hàng</div></div>
+        <span class="ts-arrow">›</span>
+      </a>
+      <a class="ts-card-sm" href="https://sites.google.com/view/tsharetraibai/groups-t-share/64-qu%E1%BA%BB-kinh-d%E1%BB%8Bch?authuser=1">
+        <div class="ts-sm-ico ic-dark">🌓</div>
+        <div><div class="ts-sm-title">64 Quẻ Kinh Dịch</div><div class="ts-sm-sub">Xem quẻ &amp; ý nghĩa</div></div>
+        <span class="ts-arrow">›</span>
+      </a>
+    </div>
   </div>
 
-  <div class="qa-section">Dịch vụ & tra cứu</div>
-  <div class="grid-main">
-    <a class="qa-card" href="https://sites.google.com/view/tsharetraibai/t%E1%BB%A9-ph%E1%BB%A7?authuser=1">
-      <div class="qa-ico ic-red">🚩</div>
-      <div class="qa-card-title">Cờ Lệnh</div>
-      <div class="qa-card-desc">Lệnh Thánh</div>
-    </a>
-    <a class="qa-card" href="https://sites.google.com/view/tsharetraibai/%C4%91%C3%A1nh-gi%C3%A1-d%E1%BB%8Bch-v%E1%BB%A5?authuser=1">
-      <div class="qa-ico ic-gold">🌟</div>
-      <div class="qa-card-title">Đánh Giá Dịch Vụ</div>
-      <div class="qa-card-desc">Gửi phản hồi</div>
-    </a>
-    <a class="qa-card" href="https://sites.google.com/view/tsharetraibai/groups-t-share/%C3%BD-ngh%C4%A9a-b%C3%A0i?authuser=1">
-      <div class="qa-ico ic-purple">💡</div>
-      <div class="qa-card-title">Ý Nghĩa Bài</div>
-      <div class="qa-card-desc">Tra cứu lá bài Tarot</div>
-    </a>
-    <a class="qa-card" href="https://sites.google.com/view/tsharetraibai/soi-c%C4%83n-s%E1%BB%91?authuser=1">
-      <div class="qa-ico ic-amber">🪧</div>
-      <div class="qa-card-title">Soi Căn – Số</div>
-      <div class="qa-card-desc">Dành cho reader</div>
-    </a>
-    <a class="qa-card" href="https://sites.google.com/view/tsharetraibai/d%E1%BB%B1-%C3%A1n/csdl-h%E1%BB%93-s%C6%A1?authuser=1">
-      <div class="qa-ico ic-gold">🔎</div>
-      <div class="qa-card-title">CSDL Hồ Sơ</div>
-      <div class="qa-card-desc">Quản lý hồ sơ KH</div>
-    </a>
-    <a class="qa-card" href="https://sites.google.com/view/tsharetraibai/groups-t-share/64-qu%E1%BA%BB-kinh-d%E1%BB%8Bch?authuser=1">
-      <div class="qa-ico ic-dark">🌓</div>
-      <div class="qa-card-title">64 Quẻ Kinh Dịch</div>
-      <div class="qa-card-desc">Xem quẻ & ý nghĩa</div>
-    </a>
-  </div>
+  <div class="ts-footer">© 2026 <strong>T-Share Trải Bài</strong> — Công ty Cổ phần Dịch vụ T-Share Groups</div>
 </div>

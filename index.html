@@ -1,57 +1,85 @@
 
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-h2.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
-.page{min-height:520px;background:linear-gradient(145deg,#0d1b3e 0%,#0b0f1a 50%,#130d2e 100%);padding:2.8rem 1rem 3rem;font-family:sans-serif;position:relative;overflow:hidden}
-.page::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:600px;height:350px;background:radial-gradient(ellipse,rgba(79,142,247,.2) 0%,transparent 70%);pointer-events:none}
-.page::after{content:'';position:absolute;bottom:-60px;right:-60px;width:300px;height:300px;background:radial-gradient(ellipse,rgba(124,77,255,.15) 0%,transparent 70%);pointer-events:none}
-.inner{max-width:440px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:2rem;position:relative;z-index:1}
-.hero{text-align:center;display:flex;flex-direction:column;align-items:center;gap:.75rem}
-.avatar{width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,#4f8ef7,#7c4dff);display:flex;align-items:center;justify-content:center;font-size:1.7rem;box-shadow:0 0 28px rgba(79,142,247,.4)}
-.page-title{font-size:1.45rem;font-weight:600;color:#e8edf5;letter-spacing:-.01em}
-.page-sub{font-size:.84rem;color:#7a8aa8}
-.divider{width:44px;height:2px;border-radius:2px;background:linear-gradient(90deg,#4f8ef7,#7c4dff)}
-.cards{width:100%;display:flex;flex-direction:column;gap:.9rem}
-.card{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:1.05rem 1.2rem;text-decoration:none;color:#e8edf5;transition:background .2s,border-color .2s,transform .2s;backdrop-filter:blur(8px)}
-.card:hover{background:rgba(255,255,255,.11);border-color:rgba(79,142,247,.5);transform:translateY(-2px)}
-.card-icon{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0}
-.c1{background:rgba(79,142,247,.18)}
-.c2{background:rgba(124,77,255,.18)}
-.card-body{flex:1;min-width:0}
-.card-name{font-size:.96rem;font-weight:600;color:#e8edf5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.card-url{font-size:.74rem;color:#7a8aa8;margin-top:.2rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.arrow{color:#7a8aa8;font-size:17px;flex-shrink:0;transition:transform .2s,color .2s}
-.card:hover .arrow{transform:translateX(3px);color:#e8edf5}
-.footer{font-size:.71rem;color:#3d4f6b;text-align:center}
-</style>
 
-<h2 class="sr-only">Trang liên kết cá nhân</h2>
-<div class="page">
-  <div class="inner">
-    <div class="hero">
-      <div class="avatar" aria-hidden="true">🔗</div>
-      <div class="page-title">Trang Liên Kết</div>
-      <div class="page-sub">Chọn một trang bên dưới để truy cập</div>
-    </div>
-    <div class="divider"></div>
-    <nav class="cards" aria-label="Liên kết ngoài">
-      <a class="card" href="https://sites.google.com/view/tsharetraibai/trang-ch%E1%BB%A7?authuser=1" target="_blank" rel="noopener">
-        <div class="card-icon c1" aria-hidden="true">🤝</div>
-        <div class="card-body">
-          <div class="card-name">T-Share Groups</div>
-          <div class="card-url">sites.google.com · T-Share Trải Bài</div>
-        </div>
-        <i class="ti ti-arrow-right arrow" aria-hidden="true"></i>
-      </a>
-      <a class="card" href="https://congthanhql.github.io/csdl/" target="_blank" rel="noopener">
-        <div class="card-icon c2" aria-hidden="true">🌐</div>
-        <div class="card-body">
-          <div class="card-name">Github Connect</div>
-          <div class="card-url">congthanhql.github.io</div>
-        </div>
-        <i class="ti ti-arrow-right arrow" aria-hidden="true"></i>
-      </a>
-    </nav>
-    <div class="footer">© 2026 · Trang cá nhân</div>
+<style>
+  .qa-wrap { padding: 1.25rem 1rem 1.5rem; font-family: 'Be Vietnam Pro', var(--font-sans); }
+  .qa-header { text-align: center; background: #150900; border-radius: var(--border-radius-lg); padding: 1.25rem 1rem 1rem; margin-bottom: 1.25rem; }
+  .qa-logo { font-size: 32px; margin-bottom: 6px; }
+  .qa-title { color: #f0c040; font-size: 18px; font-weight: 700; margin-bottom: 2px; }
+  .qa-sub { color: rgba(253,230,138,.5); font-size: 12px; }
+  .qa-section { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #c8960c; margin-bottom: 10px; margin-top: 1.25rem; display: flex; align-items: center; gap: 8px; }
+  .qa-section::after { content: ''; flex: 1; height: 1px; background: linear-gradient(to right, rgba(200,150,12,.3), transparent); }
+  .grid-top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .grid-main { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .qa-card { display: flex; flex-direction: column; align-items: flex-start; gap: 7px; padding: 14px 13px; background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); text-decoration: none; color: var(--color-text-primary); transition: background .13s, border-color .13s; }
+  .qa-card:hover { border-color: rgba(200,150,12,.5); background: #fffbf0; }
+  .qa-ico { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+  .qa-card-title { font-size: 13px; font-weight: 700; color: var(--color-text-primary); line-height: 1.3; }
+  .qa-card-desc { font-size: 11px; color: var(--color-text-secondary); }
+  .ic-teal { background: #e1f5ee; }
+  .ic-gold { background: #fef9c3; }
+  .ic-purple { background: #faf5ff; }
+  .ic-amber { background: #fef3c7; }
+  .ic-blue { background: #eff6ff; }
+  .ic-dark { background: #fef3c7; }
+  .ic-red { background: #fff1f2; }
+</style>
+<div class="qa-wrap">
+  <div class="qa-header">
+    <div class="qa-logo">🔮</div>
+    <div class="qa-title">T-Share Trải Bài</div>
+    <div class="qa-sub">Truy cập nhanh tất cả dịch vụ</div>
+  </div>
+
+  <div class="qa-section">Ưu tiên</div>
+  <div class="grid-top">
+    <a class="qa-card" href="https://sites.google.com/view/tsharetraibai/groups-t-share/b%E1%BA%A3ng-gi%C3%A1?authuser=1">
+      <div class="qa-ico ic-gold">🧧</div>
+      <div class="qa-card-title">Bảng Giá</div>
+      <div class="qa-card-desc">Xem chi tiết gói dịch vụ</div>
+    </a>
+    <a class="qa-card" href="https://sites.google.com/view/tsharetraibai/groups-t-share/%C4%91%E1%BA%B7t-l%E1%BB%8Bch?authuser=1">
+      <div class="qa-ico ic-teal">📅</div>
+      <div class="qa-card-title">Đặt Lịch</div>
+      <div class="qa-card-desc">Đặt lịch trải bài online</div>
+    </a>
+    <a class="qa-card" href="https://www.congthanh.io.vn">
+      <div class="qa-ico ic-blue">💻</div>
+      <div class="qa-card-title">Website Cá Nhân</div>
+      <div class="qa-card-desc">Portfolio & giới thiệu</div>
+    </a>
+  </div>
+
+  <div class="qa-section">Dịch vụ & tra cứu</div>
+  <div class="grid-main">
+    <a class="qa-card" href="https://sites.google.com/view/tsharetraibai/t%E1%BB%A9-ph%E1%BB%A7?authuser=1">
+      <div class="qa-ico ic-red">🚩</div>
+      <div class="qa-card-title">Cờ Lệnh</div>
+      <div class="qa-card-desc">Lệnh Thánh</div>
+    </a>
+    <a class="qa-card" href="https://sites.google.com/view/tsharetraibai/%C4%91%C3%A1nh-gi%C3%A1-d%E1%BB%8Bch-v%E1%BB%A5?authuser=1">
+      <div class="qa-ico ic-gold">🌟</div>
+      <div class="qa-card-title">Đánh Giá Dịch Vụ</div>
+      <div class="qa-card-desc">Gửi phản hồi</div>
+    </a>
+    <a class="qa-card" href="https://sites.google.com/view/tsharetraibai/groups-t-share/%C3%BD-ngh%C4%A9a-b%C3%A0i?authuser=1">
+      <div class="qa-ico ic-purple">💡</div>
+      <div class="qa-card-title">Ý Nghĩa Bài</div>
+      <div class="qa-card-desc">Tra cứu lá bài Tarot</div>
+    </a>
+    <a class="qa-card" href="https://sites.google.com/view/tsharetraibai/soi-c%C4%83n-s%E1%BB%91?authuser=1">
+      <div class="qa-ico ic-amber">🪧</div>
+      <div class="qa-card-title">Soi Căn – Số</div>
+      <div class="qa-card-desc">Dành cho reader</div>
+    </a>
+    <a class="qa-card" href="https://sites.google.com/view/tsharetraibai/d%E1%BB%B1-%C3%A1n/csdl-h%E1%BB%93-s%C6%A1?authuser=1">
+      <div class="qa-ico ic-gold">🔎</div>
+      <div class="qa-card-title">CSDL Hồ Sơ</div>
+      <div class="qa-card-desc">Quản lý hồ sơ KH</div>
+    </a>
+    <a class="qa-card" href="https://sites.google.com/view/tsharetraibai/groups-t-share/64-qu%E1%BA%BB-kinh-d%E1%BB%8Bch?authuser=1">
+      <div class="qa-ico ic-dark">🌓</div>
+      <div class="qa-card-title">64 Quẻ Kinh Dịch</div>
+      <div class="qa-card-desc">Xem quẻ & ý nghĩa</div>
+    </a>
   </div>
 </div>

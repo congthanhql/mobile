@@ -1,0 +1,57 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+h2.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+.page{min-height:520px;background:linear-gradient(145deg,#0d1b3e 0%,#0b0f1a 50%,#130d2e 100%);padding:2.8rem 1rem 3rem;font-family:sans-serif;position:relative;overflow:hidden}
+.page::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:600px;height:350px;background:radial-gradient(ellipse,rgba(79,142,247,.2) 0%,transparent 70%);pointer-events:none}
+.page::after{content:'';position:absolute;bottom:-60px;right:-60px;width:300px;height:300px;background:radial-gradient(ellipse,rgba(124,77,255,.15) 0%,transparent 70%);pointer-events:none}
+.inner{max-width:440px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:2rem;position:relative;z-index:1}
+.hero{text-align:center;display:flex;flex-direction:column;align-items:center;gap:.75rem}
+.avatar{width:68px;height:68px;border-radius:50%;background:linear-gradient(135deg,#4f8ef7,#7c4dff);display:flex;align-items:center;justify-content:center;font-size:1.7rem;box-shadow:0 0 28px rgba(79,142,247,.4)}
+.page-title{font-size:1.45rem;font-weight:600;color:#e8edf5;letter-spacing:-.01em}
+.page-sub{font-size:.84rem;color:#7a8aa8}
+.divider{width:44px;height:2px;border-radius:2px;background:linear-gradient(90deg,#4f8ef7,#7c4dff)}
+.cards{width:100%;display:flex;flex-direction:column;gap:.9rem}
+.card{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:1.05rem 1.2rem;text-decoration:none;color:#e8edf5;transition:background .2s,border-color .2s,transform .2s;backdrop-filter:blur(8px)}
+.card:hover{background:rgba(255,255,255,.11);border-color:rgba(79,142,247,.5);transform:translateY(-2px)}
+.card-icon{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0}
+.c1{background:rgba(79,142,247,.18)}
+.c2{background:rgba(124,77,255,.18)}
+.card-body{flex:1;min-width:0}
+.card-name{font-size:.96rem;font-weight:600;color:#e8edf5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card-url{font-size:.74rem;color:#7a8aa8;margin-top:.2rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.arrow{color:#7a8aa8;font-size:17px;flex-shrink:0;transition:transform .2s,color .2s}
+.card:hover .arrow{transform:translateX(3px);color:#e8edf5}
+.footer{font-size:.71rem;color:#3d4f6b;text-align:center}
+</style>
+
+<h2 class="sr-only">Trang liên kết cá nhân</h2>
+<div class="page">
+  <div class="inner">
+    <div class="hero">
+      <div class="avatar" aria-hidden="true">🔗</div>
+      <div class="page-title">Trang Liên Kết</div>
+      <div class="page-sub">Chọn một trang bên dưới để truy cập</div>
+    </div>
+    <div class="divider"></div>
+    <nav class="cards" aria-label="Liên kết ngoài">
+      <a class="card" href="https://sites.google.com/view/tsharetraibai/trang-ch%E1%BB%A7?authuser=1" target="_blank" rel="noopener">
+        <div class="card-icon c1" aria-hidden="true">🤝</div>
+        <div class="card-body">
+          <div class="card-name">T-Share Groups</div>
+          <div class="card-url">sites.google.com · T-Share Trải Bài</div>
+        </div>
+        <i class="ti ti-arrow-right arrow" aria-hidden="true"></i>
+      </a>
+      <a class="card" href="https://congthanhql.github.io/csdl/" target="_blank" rel="noopener">
+        <div class="card-icon c2" aria-hidden="true">🌐</div>
+        <div class="card-body">
+          <div class="card-name">Github Connect</div>
+          <div class="card-url">congthanhql.github.io</div>
+        </div>
+        <i class="ti ti-arrow-right arrow" aria-hidden="true"></i>
+      </a>
+    </nav>
+    <div class="footer">© 2026 · Trang cá nhân</div>
+  </div>
+</div>
